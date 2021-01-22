@@ -12,7 +12,7 @@ import setuptools
 import setuptools.command.sdist
 
 project_name = "napari-microscope"
-project_version = "0.0.0+dev"
+project_version = "0.0.1"
 
 # Modify the sdist command class to include extra files in the source
 # distribution.  Seems a bit ridiculous that we have to do this but
@@ -39,7 +39,7 @@ class sdist(setuptools.command.sdist.sdist):
 setuptools.setup(
     name=project_name,
     version=project_version,
-    description="Microscope plugin for Napari.",
+    description="Napari plugin for Microscope.",
     license="GPL-3.0+",
     author="David Miguel Susano Pinto",
     author_email="david.pinto@bioch.ox.ac.uk",
