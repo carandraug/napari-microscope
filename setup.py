@@ -11,23 +11,25 @@
 import setuptools
 import setuptools.command.sdist
 
-project_name = 'napari-microscope'
-project_version = '0.0.0+dev'
+project_name = "napari-microscope"
+project_version = "0.0.0+dev"
 
-## Modify the sdist command class to include extra files in the source
-## distribution.  Seems a bit ridiculous that we have to do this but
-## the only alternative is to have a MANIFEST file and we don't want
-## to have yet another configuration file.
-##
-## The package_data (from setuptools) and data_files (from distutils)
-## options are for files that will be installed and we don't want to
-## install this files, we just want them on the source distribution
-## for user information.
+# Modify the sdist command class to include extra files in the source
+# distribution.  Seems a bit ridiculous that we have to do this but
+# the only alternative is to have a MANIFEST file and we don't want
+# to have yet another configuration file.
+#
+# The package_data (from setuptools) and data_files (from distutils)
+# options are for files that will be installed and we don't want to
+# install this files, we just want them on the source distribution
+# for user information.
 manifest_files = [
-    'COPYING',
-    'NEWS',
-    'README',
+    "COPYING",
+    "NEWS",
+    "README",
 ]
+
+
 class sdist(setuptools.command.sdist.sdist):
     def make_distribution(self):
         self.filelist.extend(manifest_files)
@@ -37,24 +39,21 @@ class sdist(setuptools.command.sdist.sdist):
 setuptools.setup(
     name=project_name,
     version=project_version,
-    description='Microscope control plugin for Napari.',
-    license='GPL-3.0+',
-
-    author='David Miguel Susano Pinto',
-    author_email='david.pinto@bioch.ox.ac.uk',
-
-    packages = setuptools.find_packages(),
-    python_requires='>=3.6',
-
+    description="Microscope plugin for Napari.",
+    license="GPL-3.0+",
+    author="David Miguel Susano Pinto",
+    author_email="david.pinto@bioch.ox.ac.uk",
+    packages=setuptools.find_packages(),
+    python_requires=">=3.6",
+    install_requires=["Pyro4", "microscope", "napari_plugin_engine",],
+    entry_points={"napari.plugin": "microscope = napari_microscope",},
+    # https://pypi.python.org/pypi?:action=list_classifiers
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Environment :: Plugins',
-        'Intended Audience :: Science/Research',
-        'Operating System :: OS Independent',
-        'Topic :: Scientific/Engineering',
+        "Development Status :: 3 - Alpha",
+        "Environment :: Plugins",
+        "Intended Audience :: Science/Research",
+        "Operating System :: OS Independent",
+        "Topic :: Scientific/Engineering",
     ],
-
-    cmdclass={
-        'sdist' : sdist,
-    },
+    cmdclass={"sdist": sdist,},
 )
