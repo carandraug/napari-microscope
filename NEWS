@@ -1,7 +1,10 @@
 Summary of the user-visible changes for each napar-microscope release.
 
-Version 0.0.2 (upcoming)
-------------------------
+Version 0.0.2 (2021/01/22)
+--------------------------
+
+* Display the contents of README as project long description so it
+  appears on PyPI.
 
 Version 0.0.1 (2021/01/22)
 --------------------------
