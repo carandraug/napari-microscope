@@ -41,7 +41,7 @@ setuptools.setup(
     version=project_version,
     description="Napari plugin for Microscope.",
     long_description=open("README", "r").read(),
-    license="GPL-3.0+",
+    license="GPL-3.0-or-later",
     author="David Miguel Susano Pinto",
     author_email="david.pinto@bioch.ox.ac.uk",
     packages=setuptools.find_packages(),
