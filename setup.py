@@ -52,6 +52,7 @@ setuptools.setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Plugins",
+        "Framework :: napari ",
         "Intended Audience :: Science/Research",
         "Operating System :: OS Independent",
         "Topic :: Scientific/Engineering",
