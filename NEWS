@@ -1,7 +1,11 @@
 Summary of the user-visible changes for each napar-microscope release.
 
-Version 0.0.3 (upcoming)
-------------------------
+Version 0.0.3 (2021/11/23)
+--------------------------
+
+* No code changes.  This is a maintenance release to make it appear on
+  Napari Hub (https://www.napari-hub.org/)
+
 
 Version 0.0.2 (2021/01/22)
 --------------------------
